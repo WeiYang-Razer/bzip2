@@ -1,0 +1,31 @@
+{
+  "name": "bzip2",
+  "version": "0.0.0.0",
+  "schemaVersion": 2,
+  "kind": "DynamicLib",
+  "description": "TODO: one-line description of bzip2",
+  "dependencies": {},
+  "build": {
+    "system": "cmake",
+    "configs": [
+      "Debug",
+      "Release",
+      "RelWithDebInfo",
+      "MinSizeRel"
+    ],
+    "configure": [
+      "-DBUILD_SHARED_LIBS=${options.shared}"
+    ],
+    "installDir": "install"
+  },
+  "options": {
+    "shared": {
+      "default": true,
+      "allowed": [
+        true,
+        false
+      ],
+      "description": "Build as shared library; set false for static"
+    }
+  }
+}
